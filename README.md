@@ -2,11 +2,37 @@
 
 This project demonstrates an end-to-end Machine Learning pipeline—from data engineering and model training to a production-ready containerized deployment. It predicts whether a user is likely to "churn" (cancel their subscription) based on behavioral metrics like watch time, engagement, and account age.
 
-![Low probability of churn](images/low-prob.png)
-
 **Career Goal Focus:** This project showcases **AI Engineering** and **MLOps** skills by moving beyond a local Jupyter Notebook into robust environment management, synthetic data handling, and Dockerized deployment.
 
-[Image of Machine Learning MLOps pipeline architecture]
+graph TD
+    subgraph 1. Data Engineering
+        A[Raw Netflix Data] -->|fix_data.py| B(Inject Business Logic)
+        B --> C[Balanced & Cleaned Data]
+    end
+
+    subgraph 2. Model Training
+        C --> D[RandomForest Classifier]
+        D -->|scikit-learn 1.8.0| E[Evaluate & Tune]
+        E -->|Save Weights| F[(churn_model_balanced.pkl)]
+        E -->|Save Encoders| G[(label_encoders.pkl)]
+    end
+
+    subgraph 3. Application Layer
+        F --> H[Streamlit Dashboard app.py]
+        G --> H
+        H -->|User adjusts sliders| I{Real-Time Prediction}
+    end
+
+    subgraph 4. Containerized Deployment
+        H -.->|requirements.txt| J[Docker Build]
+        J -.->|python:3.11-slim| K((Running Docker Container))
+        K -->|Expose Port 8501| L[End User / Recruiter]
+    end
+
+    %% Colors %%
+    style A fill:#f9d0c4,stroke:#333,stroke-width:2px
+    style I fill:#d4edda,stroke:#333,stroke-width:2px
+    style K fill:#cce5ff,stroke:#333,stroke-width:2px
 
 ## 🚀 Project Overview
 * **Problem:** High churn rates impact revenue in subscription-based streaming services.
@@ -34,3 +60,5 @@ This project demonstrates an end-to-end Machine Learning pipeline—from data en
 └── images                          # Screenshot of Streamlit app
 
 ```
+
+![Low probability of churn](images/low-prob.png)
