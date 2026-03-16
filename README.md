@@ -4,26 +4,27 @@ This project demonstrates an end-to-end Machine Learning pipeline—from data en
 
 **Career Goal Focus:** This project showcases **AI Engineering** and **MLOps** skills by moving beyond a local Jupyter Notebook into robust environment management, synthetic data handling, and Dockerized deployment.
 
+```mermaid
 graph TD
-    subgraph 1. Data Engineering
+    subgraph Step1 [1. Data Engineering]
         A[Raw Netflix Data] -->|fix_data.py| B(Inject Business Logic)
         B --> C[Balanced & Cleaned Data]
     end
 
-    subgraph 2. Model Training
+    subgraph Step2 [2. Model Training]
         C --> D[RandomForest Classifier]
         D -->|scikit-learn 1.8.0| E[Evaluate & Tune]
         E -->|Save Weights| F[(churn_model_balanced.pkl)]
         E -->|Save Encoders| G[(label_encoders.pkl)]
     end
 
-    subgraph 3. Application Layer
+    subgraph Step3 [3. Application Layer]
         F --> H[Streamlit Dashboard app.py]
         G --> H
         H -->|User adjusts sliders| I{Real-Time Prediction}
     end
 
-    subgraph 4. Containerized Deployment
+    subgraph Step4 [4. Containerized Deployment]
         H -.->|requirements.txt| J[Docker Build]
         J -.->|python:3.11-slim| K((Running Docker Container))
         K -->|Expose Port 8501| L[End User / Recruiter]
