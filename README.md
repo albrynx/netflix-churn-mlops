@@ -49,6 +49,9 @@ graph TD
 * **Web Framework:** Streamlit
 * **DevOps:** Docker
 
+## 📄 Dataset
+The dataset is pulled from Kaggle this link: https://www.kaggle.com/datasets/rhythmghai/netflix-user-watching-behavior-dataset
+
 ## 📂 Project Structure
 ```
 ├── app.py                          # Streamlit Dashboard UI and prediction logic
