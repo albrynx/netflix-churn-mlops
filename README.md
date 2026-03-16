@@ -34,6 +34,7 @@ graph TD
     style A fill:#f9d0c4,stroke:#333,stroke-width:2px
     style I fill:#d4edda,stroke:#333,stroke-width:2px
     style K fill:#cce5ff,stroke:#333,stroke-width:2px
+```
 
 ## 🚀 Project Overview
 * **Problem:** High churn rates impact revenue in subscription-based streaming services.
