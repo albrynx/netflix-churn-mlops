@@ -2,7 +2,7 @@
 
 This project demonstrates an end-to-end Machine Learning pipeline—from data engineering and model training to a production-ready containerized deployment. It predicts whether a user is likely to "churn" (cancel their subscription) based on behavioral metrics like watch time, engagement, and account age.
 
-**Career Goal Focus:** This project showcases **AI Engineering** and **MLOps** skills by moving beyond a local Jupyter Notebook into robust environment management, synthetic data handling, and Dockerized deployment.
+**Career Goal Focus:** This project showcases **AI Engineering** and **MLOps** skills, highlighting the ability to build production-ready systems through robust environment management, synthetic data handling, advanced class-balancing techniques, and Dockerized deployment.
 
 ```mermaid
 graph TD
